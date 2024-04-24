@@ -1,0 +1,265 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    background-color: #e3e9f7;
+}
+
+main {
+    padding: 20px;
+    position: fixed;
+    z-index: 1;
+    padding-left: calc(82px + 20px);
+}
+
+#sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #ffffff;
+    height: 100vh;
+    border-radius: 0px 18px 18px 0px;
+    position: relative;
+    transition: all .5s;
+    min-width: 82px;
+    z-index: 2;
+}
+
+#sidebar_content {
+    padding: 12px;
+}
+
+#user {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+#user_avatar {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+#user_infos {
+    display: flex;
+    flex-direction: column;
+}
+
+#user_infos span:last-child {
+    color: #6b6b6b;
+    font-size: 12px;
+}
+
+#side_items {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    list-style: none;
+}
+
+.side-item {
+    border-radius: 8px;
+    padding: 14px;
+    cursor: pointer;
+}
+
+.side-item.active {
+    background-color: #4f46e5;
+}
+
+.side-item:hover:not(.active),
+#logout_btn:hover {
+    background-color: #e3e9f7;
+}
+
+.side-item a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0a0a0a;
+}
+
+.side-item.active a {
+    color: #e3e9f7;
+}
+
+.side-item a i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+}
+
+#logout {
+    border-top: 1px solid #e3e9f7;
+    padding: 12px;
+}
+
+#logout_btn {
+    border: none;
+    padding: 12px;
+    font-size: 14px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    border-radius: 8px;
+    text-align: start;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+#open_btn {
+    position: absolute;
+    top: 30px;
+    right: -10px;
+    background-color: #4f46e5;
+    color: #e3e9f7;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+#open_btn_icon {
+    transition: transform .3s ease;
+}
+
+.open-sidebar #open_btn_icon {
+    transform: rotate(180deg);
+}
+
+.item-description {
+    width: 0px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    transition: width .6s;
+    height: 0px;
+}
+
+#sidebar.open-sidebar {
+    min-width: 15%;
+}
+
+#sidebar.open-sidebar .item-description {
+    width: 150px;
+    height: auto;
+}
+
+#sidebar.open-sidebar .side-item a {
+    justify-content: flex-start;
+    gap: 14px;
+}
+
+#alfabeto{
+    height: 60px;
+    width: 100%;
+    text-align: center;
+    background-color: #4f46e5;
+    border-radius: 0px;
+    color: #ffffff;
+    }
+
+    .pesquisa{
+        display: flex;
+        align-items: center;
+        border: 1px solid #ccc;
+        background-color: #00000006;
+        width: 400px;
+        height: 40px;
+        text-align: center;
+        margin: 20px auto;
+        border-radius: 20px;
+        padding: 5px 10px;
+        color: #4b4b4b;
+        position: relative;
+        flex: 1;
+    }
+
+    #pesquisaInput{
+        padding: 8px;
+        border: none;
+        background-color: transparent;
+        width: 100%;
+        outline: none;   
+    }
+
+    .pesquisaInput{
+        flex: 2;
+        margin-left: 20px; 
+    }
+
+    .pesquisaInput[type="text"] {
+        padding: 5px;
+        width: 100%; 
+        border: none;
+        border-radius: 5px;
+    }
+    
+    
+
+        .pesquisa label{
+            height: 20px;
+        }
+
+        .card-container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        }
+
+        .card{
+            position: relative;
+            width: 1000px;
+            height: 100px;
+            text-align: center;
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 10px 20px;
+            box-shadow: 0 0 8px rgb(0,0,0,0.1);
+            flex: 2;
+            
+            
+            
+        }
+
+        #card{
+            margin-top: 20px;
+            text-align: center;
+            
+        }
+
+        #card h1{
+            margin-bottom: 10px;
+        }
+
+        /*para o rensponsivo do site*/
+        @media screen and (max-width:1020px){
+            /*classe gerais*/
+            .card{
+                flex-direction: column;
+            }
+
+            /*cabeçalho*/
+            .sidebar{
+                display: none; 
+            }
+         }
